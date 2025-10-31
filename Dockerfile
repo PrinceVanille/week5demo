@@ -6,7 +6,8 @@ WORKDIR /app
 
 # Step 3: Copy the requirements.txt to the container and install dependencies
 COPY requirements.txt /app/requirements.txt
-RUN pip install --no-cache-dir -r /app/requirements.txt
+RUN pip install --no-cache-dir -r /app/requirements.txt --index-url https://pypi.python.org/simple
+
 
 # Step 4: Copy the entire application to the container
 COPY . /app
